@@ -1,0 +1,8 @@
+# test file for percona-server
+---
+- hosts: all
+  roles:
+    - ../../
+  vars:
+    es_config:
+      network.bind_host: localhost

@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: Dincho Todorov
+  description: Ansible role to install and setup Elasticsearch on Debian-like systems
+  company: vmandco.com
+  license: MIT
+  min_ansible_version: 1.6
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+        - vivid
+        - wily
+  categories:
+    - database
+    - nosql
+    - system
+dependencies: []
