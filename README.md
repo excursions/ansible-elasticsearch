@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/dincho/ansible-elasticsearch.svg?branch=master)](https://travis-ci.org/dincho/ansible-elasticsearch)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-published-blue.svg)](https://galaxy.ansible.com/detail#/role/6363)
+
 Elasticsearch
 =========
 
