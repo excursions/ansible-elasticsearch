@@ -30,7 +30,7 @@
 - name: configure elasticsearch
   lineinfile:
     dest: /etc/elasticsearch/elasticsearch.yml
-    regexp: "^{{ item.key }} "
+    regexp: "^{{ item.key }}: "
     line: "{{ item.key }}: {{ item.value }}"
   with_dict: es_config
   notify:
