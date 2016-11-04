@@ -23,7 +23,7 @@
     regexp: "^{{ item.key }}="
     insertafter: "^#{{ item.key }}="
     line: "{{ item.key }}={{ item.value }}"
-  with_dict: es_default_config
+  with_dict: "{{ es_default_config }}"
   notify:
    - restart elasticsearch
 
@@ -32,6 +32,6 @@
     dest: /etc/elasticsearch/elasticsearch.yml
     regexp: "^{{ item.key }}: "
     line: "{{ item.key }}: {{ item.value }}"
-  with_dict: es_config
+  with_dict: "{{ es_config }}"
   notify:
    - restart elasticsearch
