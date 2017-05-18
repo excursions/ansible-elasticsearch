@@ -3,15 +3,15 @@ ROLE_NAME = File.basename(File.expand_path(File.dirname(__FILE__)))
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "test", primary: true do |node|
-    node.vm.box = "ubuntu/trusty32"
+    node.vm.box = "ubuntu/xenial64"
 
     node.vm.provider "virtualbox" do |vb|
       vb.name = ROLE_NAME
       vb.customize ["modifyvm", :id, "--memory", "256"]
     end
-    
+
     node.vm.provider "parallels" do |vm, override|
-      override.vm.box = "parallels/ubuntu-14.04-i386"
+      override.vm.box = "parallels/ubuntu-16.04"
       vm.name = ROLE_NAME
       vm.customize ["set", :id, "--memsize", "256"]
     end

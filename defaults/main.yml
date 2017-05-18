@@ -1,6 +1,4 @@
-es_version: '1.7'
+es_version: '2.4.*'
 es_default_config:
   ES_HEAP_SIZE: 128m
-es_config:
-  #http://bouk.co/blog/elasticsearch-rce/
-  script.disable_dynamic: true
+es_config: {}

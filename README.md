@@ -14,9 +14,9 @@ Requirements
 Role Variables
 --------------
 
-* `es_version`: [default: `1.7`]: Version to install
-* `es_default_config`: [default: {ES_HEAP_SIZE: 128m}]: /etc/default/elasticsearch configuration
-* `es_config`: [default: {script.disable_dynamic: true}]: List of node [configuration options](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+* `es_version`: [default: `2.4.*`]: Version to install
+* `es_default_config`: [default: {ES_JAVA_OPTS: -Xms128m -Xmx128m}]: /etc/default/elasticsearch configuration
+* `es_config`: [default: {}]: List of node [configuration options](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
 
 Dependencies
 ------------
@@ -28,7 +28,7 @@ Example Playbook
 
     - hosts: servers
       vars:
-        es_version: '1.4'
+        es_version: '2.4.1'
         es_default_config:
           MAX_OPEN_FILES=65535
         es_config:
