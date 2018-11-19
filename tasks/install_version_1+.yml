@@ -1,0 +1,11 @@
+- name: Add Elasticsearch repository
+  apt_repository:
+    repo: 'deb http://packages.elasticsearch.org/elasticsearch/{{ es_version[0] }}.x/debian stable main'
+    state: present
+    update_cache: yes
+
+- name: Install Elasticsearch packages
+  apt: pkg={{ item }} state=present
+  with_items:
+    - default-jre-headless
+    - elasticsearch={{ es_version }}

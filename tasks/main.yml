@@ -2,17 +2,11 @@
 - name: Add Elasticsearch apt signing key
   apt_key: keyserver=keyserver.ubuntu.com id=D88E42B4 state=present
 
-- name: Add Elasticsearch repository
-  apt_repository:
-    repo: 'deb http://packages.elasticsearch.org/elasticsearch/{{ es_version[0] }}.x/debian stable main'
-    state: present
-    update_cache: yes
+- include_tasks: install_version_0.yml
+  when: es_version[0]|int == 0
 
-- name: Install Elasticsearch packages
-  apt: pkg={{ item }} state=present
-  with_items:
-    - default-jre-headless
-    - elasticsearch={{ es_version }}
+- include_tasks: install_version_1+.yml
+  when: es_version[0]|int > 0
 
 - name: Start and enable Elasticsearch
   service: name=elasticsearch state=started enabled=yes
