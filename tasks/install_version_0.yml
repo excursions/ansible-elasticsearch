@@ -10,12 +10,12 @@
     repoVersion: "{{ es_version|regex_replace('^([^.]*.[^.]*).*', '\\1') }}"
   apt_repository:
     repo: "deb http://packages.elasticsearch.org/elasticsearch/{{ repoVersion }}/debian stable main"
-  state: present
-  update_cache: yes
+    state: present
+    update_cache: yes
 
 - name: Install Elasticsearch packages
   apt:
     pkg:
-    - openjdk-7-jre-headless
-    - elasticsearch={{ es_version }}
+      - openjdk-7-jre-headless
+      - elasticsearch={{ es_version }}
     state: present
