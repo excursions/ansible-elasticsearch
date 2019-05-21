@@ -2,6 +2,10 @@
 - name: Add Elasticsearch apt signing key
   apt_key: keyserver=keyserver.ubuntu.com id=D88E42B4 state=present
 
+- name: Remove useless packages from the cache
+  apt:
+    autoclean: yes
+
 - include_tasks: install_version_0.yml
   when: es_version[0]|int == 0
 
