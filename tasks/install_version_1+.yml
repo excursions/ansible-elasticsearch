@@ -2,6 +2,11 @@
   apt_repository:
     repo: 'deb http://packages.elasticsearch.org/elasticsearch/{{ es_version[0] }}.x/debian stable main'
     state: present
+    update_cache: no
+
+- name: Update and upgrade apt
+  apt:
+    upgrade: yes
     update_cache: yes
 
 - name: Install Elasticsearch packages
